@@ -1,0 +1,341 @@
+# Dagger Spell Farms - Episode 1: "Legacy's Price"
+# Ren'Py Visual Novel Script
+
+# Character Definitions
+define e = Character("Eleanor", color="#8B4513")
+define j = Character("James", color="#2E8B57") 
+define s = Character("Sarah", color="#4169E1")
+define bd = Character("B.D.", color="#DC143C")
+define julie = Character("Julie", color="#9370DB")
+define robert = Character("Robert Jr.", color="#CD853F")
+define narrator = Character(None, kind=nvl)
+
+# Image Definitions
+image bg farmhouse_kitchen = "backgrounds/farmhouse_kitchen.png"
+image bg office_main = "backgrounds/office_main.png"
+image bg james_office = "backgrounds/james_office.png"
+image bg highway = "backgrounds/highway_interior.png"
+image bg records_office = "backgrounds/records_office.png"
+
+image eleanor neutral = "characters/eleanor_neutral.png"
+image eleanor distressed = "characters/eleanor_distressed.png"
+image eleanor worried = "characters/eleanor_worried.png"
+
+image james neutral = "characters/james_neutral.png"
+image james worried = "characters/james_worried.png"
+image james determined = "characters/james_determined.png"
+image james phone = "characters/james_phone.png"
+
+image sarah neutral = "characters/sarah_neutral.png"
+image sarah concerned = "characters/sarah_concerned.png"
+image sarah professional = "characters/sarah_professional.png"
+
+image bd neutral = "characters/bd_neutral.png"
+image bd serious = "characters/bd_serious.png"
+image bd friendly = "characters/bd_friendly.png"
+
+# The script starts here
+label start:
+    
+    # Opening scene - Teaser
+    scene black
+    with fade
+    
+    # Text overlay for episode title
+    centered "{size=+20}{color=#FFD700}DAGGER SPELL FARMS{/color}{/size}\n\n{size=+10}\"Legacy's Price\"{/size}\n{size=-5}Pilot Episode{/size}"
+    
+    pause 3.0
+    
+    scene black
+    with fade
+    
+    # Farmhouse Kitchen - Morning
+    scene bg farmhouse_kitchen
+    with fade
+    
+    play music "audio/morning_theme.ogg" fadein 2.0
+    
+    show eleanor distressed at center
+    with dissolve
+    
+    narrator "Sunlight streams through worn curtains, illuminating a well-loved farmhouse kitchen. Bills are scattered across the oak table, most stamped with red \"FINAL NOTICE\" warnings."
+    
+    narrator "A foreclosure notice sits prominently among them."
+    
+    e "Robert, what have you done to us?"
+    
+    # Show Eleanor looking at bills
+    narrator "Eleanor reaches for her cell phone, then pulls back. She does this three times before finally picking it up."
+    
+    show eleanor worried
+    
+    narrator "She scrolls through her contacts, stopping on \"James.\" Her thumb hovers over the name."
+    
+    # Flashback transition
+    scene black
+    with fade
+    
+    centered "{size=+5}{i}Eight Years Ago{/i}{/size}"
+    
+    scene bg farmhouse_kitchen
+    with fade
+    
+    # Flashback scene (we'll use current sprites for now)
+    show james determined at right
+    show eleanor worried at left
+    
+    narrator "A younger James stands toe-to-toe with Robert Sr."
+    
+    j "If you can't respect my decisions, then get out!"
+    
+    narrator "The sound of a door slamming echoes through memory."
+    
+    j "Fine! But when you lose everything to this Co-Op, don't come crying to me!"
+    
+    # Back to present
+    scene black
+    with fade
+    
+    centered "{size=+5}{i}Present Day{/i}{/size}"
+    
+    scene bg farmhouse_kitchen
+    with fade
+    
+    show eleanor distressed at center
+    
+    narrator "Eleanor takes a deep breath and presses \"Call.\""
+    
+    # Scene transition to Dallas office
+    scene bg office_main
+    with fade
+    
+    play music "audio/business_theme.ogg" fadein 2.0
+    
+    narrator "A pristine, modern office space in downtown Dallas. Floor-to-ceiling windows offer a stunning view of the city skyline."
+    
+    show sarah professional at left
+    show bd friendly at right
+    
+    narrator "Sarah sits at her desk, reviewing reports with her ever-present Montblanc pen. A proper tea service sits ready nearby."
+    
+    narrator "B.D. exits the elevator, his tailored suit doing little to hide his athletic build. He tosses a protein bar onto Sarah's desk."
+    
+    bd "Your breakfast, your majesty."
+    
+    show sarah neutral
+    
+    s "American protein bars? How desperately common."
+    
+    show bd neutral
+    
+    bd "They're growing on you."
+    
+    s "Like a fungus."
+    
+    narrator "Sarah checks her watch."
+    
+    s "He's late."
+    
+    bd "When isn't he?"
+    
+    # Show James in background through glass
+    narrator "Through the glass walls, they watch James pace his office, phone to his ear. He's in his element, commanding yet casual."
+    
+    scene bg james_office
+    with fade
+    
+    show james phone at center
+    
+    j "No, tell them we'll match any offer, but I want right of first refusal on future harvests."
+    
+    # Back to main office
+    scene bg office_main
+    with fade
+    
+    show sarah professional at left
+    show bd friendly at right
+    
+    narrator "Sarah and B.D. share a look—they've seen this dance before."
+    
+    s "Ten quid says he skips the board meeting."
+    
+    bd "Nobody's taking that bet. Speaking of bets—"
+    
+    show bd neutral
+    
+    narrator "B.D. pulls out his phone, showing a news headline."
+    
+    bd "Check this out. \"Hastings Law Clinches Landmark Agricultural Anti-Trust Case.\""
+    
+    bd "I believe that means you owe me a thousand quid, or whatever you call them in the Queen's coin."
+    
+    show sarah concerned
+    
+    s "Must you be so utterly American about it?"
+    
+    # James enters
+    scene bg james_office
+    show james neutral at center
+    
+    j "Sarah, can you forward the Dewitt Farm contract with first refusal rights over to—"
+    
+    show james worried
+    
+    narrator "James falters, realizing he doesn't remember the name of the person on the phone."
+    
+    # Quick cut to Sarah helping
+    scene bg office_main
+    show sarah professional at center
+    
+    s "Yes, Mr. Spell, I'll send the Dewitt contract over to Richard immediately."
+    
+    # Back to James
+    scene bg james_office
+    show james neutral at center
+    
+    j "Yes, Richard. You'll have the contract in the next five minutes. Review it and get back to me before the closing bell. Let's lock this down."
+    
+    narrator "James hangs up and rejoins Sarah and B.D."
+    
+    scene bg office_main
+    show james worried at center
+    show sarah neutral at left  
+    show bd friendly at right
+    
+    j "Crap. Let's pay the man."
+    
+    narrator "James pulls out his wallet."
+    
+    bd "Told you I'd win it before summer."
+    
+    s "This is your fault. You're the one who bet against him."
+    
+    j "And you're the one who followed my bet."
+    
+    narrator "James hands B.D. cash."
+    
+    j "Happy?"
+    
+    bd "Ecstatic. Now I can finally afford one of those fancy teas you keep pushing on me."
+    
+    # Phone rings - the crucial moment
+    play sound "audio/phone_ring.ogg"
+    
+    narrator "Their playful banter is interrupted by Sarah's phone ringing. She glances at the caller ID: \"Eleanor Spell.\""
+    
+    show sarah concerned
+    show james worried
+    show bd serious
+    
+    narrator "The atmosphere shifts instantly. Sarah's eyes meet James's before she answers."
+    
+    s "Spell Commodities, Sarah speaking."
+    
+    show sarah professional
+    
+    s "Eleanor, dear, it's wonderful to hear your voice. James has just returned from the morning board meeting. Let me transfer you straight away."
+    
+    show james determined
+    
+    narrator "James is already moving toward his office, all traces of earlier levity gone."
+    
+    # The phone call scene
+    scene bg james_office
+    with fade
+    
+    show james worried at center
+    
+    narrator "James enters, closing the door just as his phone lights up. He takes a deep breath before answering."
+    
+    j "Mom?"
+    
+    # Intercut with Eleanor
+    scene bg farmhouse_kitchen
+    show eleanor distressed at center
+    
+    e "James... I'm sorry..."
+    
+    scene bg james_office
+    show james worried at center
+    
+    j "Mom, what's wrong?"
+    
+    scene bg farmhouse_kitchen
+    show eleanor distressed at center
+    
+    e "I promised your father I'd never... but James, we're losing everything."
+    
+    scene bg james_office
+    show james worried at center
+    
+    narrator "James grips the phone tighter."
+    
+    scene bg farmhouse_kitchen
+    show eleanor distressed at center
+    
+    e "The Co-Op... the bills... they're taking the farm, baby."
+    
+    scene bg james_office
+    show james determined at center
+    
+    narrator "James closes his eyes, fighting emotion."
+    
+    j "I'll be there tonight."
+    
+    scene bg farmhouse_kitchen
+    show eleanor worried at center
+    
+    e "Your father..."
+    
+    scene bg james_office
+    show james determined at center
+    
+    j "Tonight, Mom. I promise."
+    
+    # End of opening sequence
+    scene black
+    with fade
+    
+    centered "{size=+10}Episode 1{/size}\n{size=+5}Legacy's Price{/size}\n\n{size=-5}To be continued...{/size}"
+    
+    pause 3.0
+    
+    return
+
+# Additional labels for different scenes can be added here
+label office_scene:
+    # B.D. enters James's office
+    scene bg james_office
+    show james worried at center
+    
+    show bd friendly at right
+    with moveinright
+    
+    bd "Dagger, my man! What are the numbers telling you to-"
+    
+    show bd serious
+    
+    narrator "He stops, noting James's expression."
+    
+    bd "That ain't your market face. That's your family face."
+    
+    return
+
+label driving_scene:
+    scene bg highway
+    with fade
+    
+    play music "audio/driving_theme.ogg" fadein 2.0
+    
+    narrator "James speeds down the highway, Dallas shrinking in his rear view mirror. He fights with the car's touchscreen, jabbing at it with increasing frustration."
+    
+    j "Come on... Sarah's \"superior\" British engineering..."
+    
+    narrator "The screen flashes: \"WOULD YOU LIKE TO PAIR YOUR DEVICE?\""
+    
+    j "I already paired it, you pretentious piece of-"
+    
+    # Phone rings with Julie
+    play sound "audio/phone_ring.ogg"
+    
+    return
